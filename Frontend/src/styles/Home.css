@@ -1,0 +1,127 @@
+.containerHome {
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: contents;
+  align-items: center;
+}
+
+.cabecalho {
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.cabecalho h1 {
+  font-size: 2.5rem;
+  color: rgb(0, 0, 0);
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.logo {
+  margin-bottom: 20px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.homeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.cartao {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  border: 1px solid #21354741;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.cartao:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+  border-color: rgb(197, 197, 197);
+}
+
+.btnAcesso {
+  display: ruby-text;
+  margin-top: 15px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: 1px solid #4049ff;
+  background: transparent;
+  color: #4049ff;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+  justify-self: stretch;
+}
+
+.btnAcesso:hover {
+  background: #000dff;
+  color: white;
+}
+
+.cartao h3{
+  color: #213547;
+}
+
+.modalContent {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  position: relative;
+  max-width: 800px;
+  color: #333;
+}
+
+.modalBody {
+  margin-left: 5%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.btnFecharModal {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  margin-bottom: -10%;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  background-color: #ffffff;
+  color: #d61111;
+}
+.btnFecharModal:hover {
+  color: #000000;
+}
+
+.btnAcessoModal {
+  display: ruby-text;
+  margin-top: 20%;
+  padding: 5px 20px;
+  border-radius: 6px;
+  border: 1px solid #4049ff;
+  background: transparent;
+  color: #4049ff;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+  margin-left: -40%;
+}
+
+.btnAcessoModal:hover {
+  background: #000dff;
+  color: white;
+}

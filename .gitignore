@@ -1,0 +1,11 @@
+.vs/
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+*.cache
+*.log
+node_modules/
+appsettings.Development.json
+img/

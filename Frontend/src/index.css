@@ -1,0 +1,288 @@
+/*Estilos padrões*/
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #f7f7f7;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #000dff;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+p {
+  margin-top: -30px;
+  margin-bottom: 1.25em;
+  color: #000;
+  text-align: center;
+  text-transform: bold;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #4d4d4d;
+  }
+}
+
+/*Abertura*/
+.containerAbertura{
+  position:fixed;
+  inset:0;
+  background: radial-gradient(circle,#111,#000);
+  z-index:9998;
+}
+
+.telaAbertura {
+  position: fixed;
+  width: 100%;
+  height: 50%;
+  left: 0;
+  background-color: #111;
+  z-index: 9999;
+  transition: transform 1s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.telaAbertura.top {
+  top: 0;
+}
+
+.telaAbertura.bottom {
+  bottom: 0;
+}
+
+.telaAbertura.top.abrir{
+  transform: translateY(-100%);
+}
+
+.telaAbertura.bottom.abrir{
+  transform: translateY(100%);
+}
+
+@keyframes openTop {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes openBottom {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(100%);
+  }
+}
+
+.aberturaInicial {
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  z-index:10000;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  transition: opacity 0.8s ease;
+}
+
+.aberturaInicial.sumir{
+  opacity: 0;
+  pointer-events: none;
+}
+
+.logoAbertura {
+  width:240px;
+  animation: logoFade 1s ease;
+  filter:
+    drop-shadow(-100px 0px 40px rgba(9, 25, 255, 0.5)) /* Azul à esquerda */
+    drop-shadow(100px 0px 40px rgba(214, 17, 17, 0.5))  /* Vermelho à direita */
+    drop-shadow(0px -100px 40px rgba(0, 200, 80, 0.3))  /* Verde acima */
+    drop-shadow(0px 100px 40px rgba(255, 200, 0, 0.3)); /* Amarelo abaixo */
+}
+
+.mensagemInicial{
+  position: absolute;
+  bottom: -75px;
+  white-space: nowrap;
+  color:white;
+  font-size:26px;
+  letter-spacing:1px;
+  transition: 0.8s ease;
+  opacity: 1;
+}
+
+.mensagemInicial.esconder{
+  opacity:0;
+}
+
+@keyframes fadePage {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes logoFade{
+  from{
+    opacity:0;
+    transform:scale(.7);
+  }
+  to{
+    opacity:1;
+    transform:scale(1);
+  }
+}
+
+@keyframes fadeWelcome{
+  from{
+    opacity:0;
+    transform:translateY(10px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/*SideBar*/
+.btnMenu {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  border-color: #ffffff;
+  padding: 0.3em;
+  font-size: 1em;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  margin-left: -10px;
+  margin-bottom: 30px;
+}
+
+.btnMenu:hover {
+  border-color: #4d4d4d;
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 180px;
+  height: 100vh;
+  background-color: #1f1f1f;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease;
+}
+
+.sidebar.collapsed {
+  width: 70px;
+}
+
+.sidebar .btnModal {
+  color: white;
+  text-decoration: none;
+  opacity: 0.8;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.sidebar.collapsed .btnModal {
+  display: none;
+  list-style: none;
+}
+
+.sidebar.collapsed .menuIcon {
+  display: none;
+}
+
+.submenu {
+  padding-left: 20px;
+  margin-bottom: 17px;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+/*Modal tela inicial*/
+.btnModal {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  background-color: #1f1f1f;
+}
+.btnModal:hover {
+  border-color: #4d4d4d;
+}
+
+.btnModal:focus, .btnModal:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 111000;
+}

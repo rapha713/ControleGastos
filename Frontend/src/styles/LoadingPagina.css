@@ -1,0 +1,41 @@
+.loadingTransicao {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle,#ffffff,#000);
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    pointer-events: all;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loadingTransicao.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.logoCarregamento {
+    width: 240px;
+    animation: logoFade 0.8s infinite alternate ease-in-out;
+}
+
+@keyframes logoFade {
+    from { opacity: 0.6; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.transicaoPage{
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.carregando {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.carregado {
+    opacity: 1;
+    transform: translateY(0);
+}
